@@ -1,0 +1,10 @@
+@use "sass:map";
+@use "../settings/colors" as settings-colors;
+
+@each $name, $map in settings-colors.$colors {
+  @each $key, $color in $map {
+    .u-bg-#{$name}-#{$key} {
+      background-color: #{$color} !important;
+    }
+  }
+}

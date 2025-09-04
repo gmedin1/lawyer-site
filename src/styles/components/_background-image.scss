@@ -1,0 +1,10 @@
+.c-bg-img {
+  background-image: var(--bg-img);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &.c-bg-hero {
+    --bg-img: url(./bg-hero.webp);
+  }
+}

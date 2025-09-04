@@ -1,0 +1,6 @@
+@use "../settings/variables" as settings-variables;
+
+.o-content {
+  padding-inline: settings-variables.$content-padding-inline;
+  margin: 0 auto;
+}

@@ -1,0 +1,10 @@
+@use "sass:map";
+@use "../settings/typography" as settings-typography;
+
+@each $key, $font-size in settings-typography.$font-sizes {
+  $line-height: map.get(settings-typography.$line-heights, $key);
+  .u-text-#{$key} {
+    font-size: var(--text-#{$key}, $font-size);
+    line-height: var(--line-height-#{$key}, $line-height);
+  }
+}

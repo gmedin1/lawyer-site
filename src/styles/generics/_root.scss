@@ -1,0 +1,32 @@
+@use "../settings/tokens" as settings-tokens;
+@use "../settings/colors" as settings-colors;
+@use "../settings/radius" as settings-radius;
+
+:root {
+  /* Colors */
+  @each $name, $map in settings-colors.$colors {
+    @each $key, $color in $map {
+      --#{$name}-#{$key}: #{$color};
+    }
+  }
+
+  /* Radius */
+  @each $key, $radius in settings-radius.$radius {
+    --radius-#{$key}: #{$radius};
+  }
+
+  /* Basic Unit */
+  --spacing: #{settings-tokens.$spacing};
+
+  /* Objects: Layout Content */
+  --content-padding-inline: calc(var(--spacing) * 4); // 16px
+
+  /* Component: Logo */
+  --logo-max-width: calc(var(--spacing) * 45); // 180px
+
+  /* Component: Toggle Button */
+  --toggle-size: calc(var(--spacing) * 10); // 40px;
+  --toggle-border-color: var(--gold-900);
+  --toggle-border-radius: var(--radius-xs);
+  --toggle-padding: calc(var(--spacing) * 3);
+}
