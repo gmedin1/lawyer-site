@@ -1,28 +1,23 @@
 @use "sass:map";
-@use "./tokens" as s-t;
-@use "./colors" as s-c;
-@use "./radius" as s-r;
+@use "./tokens" as t;
+@use "./colors" as c;
+@use "./radius" as r;
 
 /* Objects: Layout Content */
-$content-padding-inline: var(
-  --content-padding-inline,
-  s-t.$spacing * 4
-) !default;
+$content-padding-inline: var(--content-padding-inline, t.$spacing * 6) !default;
 
-/* Components: Logo */
-$logo-max-width: var(--logo-max-width, s-t.$spacing * 45) !default;
+/* Component: Site Header */
+$header-height: var(--header-height, t.$spacing * 24) !default;
 
-/* Components: Toggle Button */
-$toggle: (
-  "border-color": var(--toggle-border-color, map.get(s-c.$gold, "900")),
-  "border-radius": var(--toggle-border-radius, map.get(s-r.$radius, "xs")),
-  "padding": var(--toggle-padding, s-t.$spacing * 3),
-  "height": var(--toggle-size, s-t.$spacing * 10),
-  "width": var(--toggle-size, s-t.$spacing * 10),
-) !default;
+/* Component: Logo */
+$logo-max-width: var(--logo-max-width, t.$spacing * 45) !default;
 
-@mixin get-variables() {
-  @each $key, $value in $toggle {
-    #{$key}: #{$value};
-  }
-}
+/* Component: Toggle Button */
+$toggle-border-color: var(--toggle-border-color, map.get(c.$gold, "900"));
+$toggle-border-radius: var(--toggle-border-radius, map.get(r.$radius, "xs"));
+$toggle-height: var(--toggle-size, t.$spacing * 10);
+$toggle-width: var(--toggle-size, t.$spacing * 10);
+
+/* Component: Icon */
+$icon-height: var(--icon-size, t.$spacing * 6);
+$icon-width: var(--icon-size, t.$spacing * 6);

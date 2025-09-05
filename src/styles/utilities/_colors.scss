@@ -1,10 +1,13 @@
 @use "sass:map";
-@use "../settings/colors" as settings-colors;
+@use "../settings/colors" as c;
 
-@each $name, $map in settings-colors.$colors {
+@each $name, $map in c.$colors {
   @each $key, $color in $map {
     .u-bg-#{$name}-#{$key} {
-      background-color: #{$color} !important;
+      background-color: var(--#{$name}-#{$key}, $color) !important;
+    }
+    .u-text-#{$name}-#{$key} {
+      color: var(--#{$name}-#{$key}, $color) !important;
     }
   }
 }

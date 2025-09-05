@@ -1,7 +1,8 @@
 @use "sass:map";
-@use "../settings/variables" as s-v;
+@use "../settings/variables" as v;
 
 .c-site-header {
+  height: v.$header-height;
   left: 0;
   position: sticky;
   right: 0;
@@ -14,33 +15,26 @@
     justify-content: space-between;
 
     & .c-logo {
-      max-width: s-v.$logo-max-width;
+      max-width: v.$logo-max-width;
     }
+  }
 
-    & .c-toggle {
-      align-items: center;
-      appearance: none;
-      aspect-ratio: 1 / 1;
-      background: none;
-      //border-color: map.get(s-v.$toggle, "border-color");
-      //border-radius: map.get(s-v.$toggle, "border-radius");
-      border-style: solid;
-      border-width: 1px;
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-      //      height: map.get(s-v.$toggle, "size");
-      justify-content: center;
-      //      padding: map.get(s-v.$toggle, "padding");
-      //      width: map.get(s-v.$toggle, "size");
-      @include s-v.get-variables();
-
-      & .line {
-        background-color: var(--gold-900);
-        height: 2px;
-        width: 100%;
-      }
-    }
+  & .c-toggle {
+    align-items: center;
+    appearance: none;
+    aspect-ratio: 1 / 1;
+    background: none;
+    border-color: v.$toggle-border-color;
+    border-radius: v.$toggle-border-radius;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    height: v.$toggle-height;
+    justify-content: center;
+    padding: 0;
+    width: v.$toggle-width;
   }
 
   & .c-dialog-nav {
@@ -52,15 +46,19 @@
     justify-content: center;
     left: 0;
     margin: 0;
+    opacity: 0;
     padding: 0;
     position: absolute;
     right: 0;
     top: 0;
-    transform: translateX(100%);
+    transition: all 0.3s ease;
+    visibility: hidden;
     z-index: 999;
 
     &.open {
-      transform: translateX(0);
+      opacity: 1;
+      transition: all 0.3s ease;
+      visibility: visible;
     }
   }
 }

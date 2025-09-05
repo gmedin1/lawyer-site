@@ -1,0 +1,8 @@
+@use '../settings/variables' as v;
+
+.c-icon {
+    aspect-ratio: 1 / 1;
+    display: block;
+    height: v.$icon-height;
+    width: v.$icon-width;
+}
