@@ -2,22 +2,39 @@
 @use "./tokens" as t;
 @use "./colors" as c;
 @use "./radius" as r;
+@use "./typography" as f;
 
 /* Objects: Layout Content */
 $content-padding-inline: var(--content-padding-inline, t.$spacing * 6) !default;
+$content-max-width: var(--content-max-width, 767px) !default;
 
 /* Component: Site Header */
 $header-height: var(--header-height, t.$spacing * 24) !default;
+
+/* Component: Eyebrow */
+$eyebrow-font-size: var(--eyebrow-font-size, map.get(f.$font-sizes, "2xl")) !default;
+$eyebrow-font-weight: var(--eyebrow-font-weight, map.get(f.$font-weights, "semibold")) !default;
+$eyebrow-line-height: var(--eyebrow-line-height, map.get(f.$line-heights, "2xl")) !default;
+$eyebrow-decoration-background-color: var(--eyebrow-decoration-background-color, map.get(c.$gold, "900")) !default;
+$eyebrow-decoration-thickness: var(--eyebrow-decoration-thickness, 2px) !default;
+$eyebrow-decoration-width: var(--eyebrow-decoration-width, t.$spacing * 18) !default;
+
+/* Component: Hero */
+$hero-gap: var(--hero-gap, t.$spacing * 4) !default;
+$hero-min-height: var(--hero-min-height, calc(100vh - (t.$spacing * 24))) !default;
+$hero-inner-gap: var(--hero-inner-gap, t.$spacing * 6) !default;
 
 /* Component: Logo */
 $logo-max-width: var(--logo-max-width, t.$spacing * 45) !default;
 
 /* Component: Toggle Button */
-$toggle-border-color: var(--toggle-border-color, map.get(c.$gold, "900"));
-$toggle-border-radius: var(--toggle-border-radius, map.get(r.$radius, "xs"));
-$toggle-height: var(--toggle-size, t.$spacing * 10);
-$toggle-width: var(--toggle-size, t.$spacing * 10);
+$toggle-border-color: var(--toggle-border-color, map.get(c.$gold, "900")) !default;
+$toggle-border-radius: var(--toggle-border-radius, map.get(r.$radius, "xs")) !default;
+$toggle-height: var(--toggle-size, t.$spacing * 10) !default;
+$toggle-width: var(--toggle-size, t.$spacing * 10) !default;
 
 /* Component: Icon */
-$icon-height: var(--icon-size, t.$spacing * 6);
-$icon-width: var(--icon-size, t.$spacing * 6);
+$icon-height: var(--icon-size, t.$spacing * 6) !default;
+$icon-width: var(--icon-size, t.$spacing * 6) !default;
+
+/* Component: Section Title */

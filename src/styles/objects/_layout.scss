@@ -1,6 +1,7 @@
-@use "../settings/variables" as settings-variables;
+@use "../settings/variables" as v;
 
 .o-content {
-  padding-inline: settings-variables.$content-padding-inline;
   margin: 0 auto;
+  max-width: v.$content-max-width;
+  padding-inline: v.$content-padding-inline;
 }

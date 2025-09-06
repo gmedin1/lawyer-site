@@ -1,0 +1,21 @@
+@use "../settings/variables" as v;
+
+.c-eyebrow {
+  font-family: "Times New Roman", sans-serif;
+  font-size: v.$eyebrow-font-size;
+  font-weight: v.$eyebrow-font-weight;
+  line-height: v.$eyebrow-line-height;
+  position: relative;
+
+  &::before {
+    background-color: v.$eyebrow-decoration-background-color;
+    bottom: 100%;
+    content: "";
+    display: block;
+    height: v.$eyebrow-decoration-thickness;
+    margin: 0.5rem 0.25rem;
+    position: absolute;
+    transform: translateY(-100%);
+    width: v.$eyebrow-decoration-width;
+  }
+}

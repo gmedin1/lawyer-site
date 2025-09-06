@@ -5,9 +5,10 @@
 }
 
 body {
-  min-height: 100vh;
-  margin: 0;
   font-family: "Times New Roman", serif;
+  margin: 0;
+  min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
 ul,
@@ -24,4 +25,12 @@ img,
 picture {
   display: block;
   max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
 }

@@ -1,6 +1,8 @@
 @use "../settings/tokens" as t;
 @use "../settings/colors" as c;
 @use "../settings/radius" as r;
+@use "../settings/typography" as f;
+@use "../settings/leading" as l;
 
 :root {
   /* Colors */
@@ -8,6 +10,22 @@
     @each $key, $color in $map {
       --#{$name}-#{$key}: #{$color};
     }
+  }
+
+  /* Typography */
+  @each $key, $font-size in f.$font-sizes {
+    --text-#{$key}: #{$font-size};
+  }
+  @each $key, $line-height in f.$line-heights {
+    --line-height-#{$key}: #{$line-height};
+  }
+  @each $key, $font-weight in f.$font-weights {
+    --font-#{$key}: #{$font-weight};
+  }
+
+  /* Leading */
+  @each $key, $em in l.$leading {
+    --leading-#{$key}: #{$em};
   }
 
   /* Radius */
@@ -20,9 +38,25 @@
 
   /* Objects: Layout Content */
   --content-padding-inline: calc(var(--spacing) * 6); // 16px
+  --content-max-width: 767px;
 
   /* Component: Site Header */
   --header-height: calc(var(--spacing) * 24); // 96px
+
+  /* Component: Eyebrow */
+  --eyebrow-font-size: var(--text-2xl);
+  --eyebrow-font-weight: var(--font-semibold);
+  --eyebrow-line-height: var(--line-height-2xl);
+
+  /* Component: Hero */
+  --hero-gap: calc(var(--spacing) * 4);
+  --hero-min-height: calc(100vh - (var(--spacing) * 24));
+  --hero-inner-gap: calc(var(--spacing) * 6);
+  --eyebrow-decoration-background-color: var(
+    --eyebrow-decoration-background-color
+  );
+  --eyebrow-decoration-thickness: 2px;
+  --eyebrow-decoration-width: calc(var(--spacing) * 18);
 
   /* Component: Logo */
   --logo-max-width: calc(var(--spacing) * 45); // 180px
