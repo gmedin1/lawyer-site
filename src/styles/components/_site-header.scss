@@ -36,29 +36,4 @@
     padding: 0;
     width: v.$toggle-width;
   }
-
-  & .c-dialog-nav {
-    align-items: center;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: center;
-    left: 0;
-    margin: 0;
-    opacity: 0;
-    padding: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: all 0.3s ease;
-    visibility: hidden;
-    z-index: 999;
-
-    &.open {
-      opacity: 1;
-      transition: all 0.3s ease;
-      visibility: visible;
-    }
-  }
 }

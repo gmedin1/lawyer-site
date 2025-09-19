@@ -8,14 +8,14 @@
   position: relative;
 
   &::before {
-    background-color: v.$eyebrow-decoration-background-color;
+    background-color: v.$eyebrow-line-background-color;
     bottom: 100%;
     content: "";
     display: block;
-    height: v.$eyebrow-decoration-thickness;
+    height: v.$eyebrow-line-thickness;
     margin: 0.5rem 0.25rem;
     position: absolute;
     transform: translateY(-100%);
-    width: v.$eyebrow-decoration-width;
+    width: v.$eyebrow-line-width;
   }
 }

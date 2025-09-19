@@ -5,4 +5,5 @@ p,
   font-family: "Times New Roman", serif;
   font-weight: var(--font-medium);
   letter-spacing: var(--leading-lg);
+  margin-block: calc(var(--spacing) * 4);
 }

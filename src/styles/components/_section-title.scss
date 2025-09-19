@@ -1,2 +1,24 @@
+@use "../settings/variables" as v;
+
 .c-section-title {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: v.$section-title-gap;
+
+  &::before {
+    content: "";
+    display: block;
+    background-image: var(--bg-img);
+  }
+
+  &.c-triumph {
+    --bg-img: url(./triumph.webp);
+
+    &::before {
+      height: v.$seciton-title-triumph-height;
+      width: v.$seciton-title-triumph-width;
+    }
+  }
 }

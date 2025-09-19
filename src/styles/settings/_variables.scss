@@ -1,12 +1,16 @@
 @use "sass:map";
-@use "./tokens" as t;
 @use "./colors" as c;
 @use "./radius" as r;
+@use "./tokens" as t;
 @use "./typography" as f;
 
 /* Objects: Layout Content */
 $content-padding-inline: var(--content-padding-inline, t.$spacing * 6) !default;
 $content-max-width: var(--content-max-width, 767px) !default;
+
+/* Objects: Layout Section */
+$section-padding-block: var(--section-padding-block, t.$spacing * 12) !default;
+$section-fluid-gap: var(--section-fluid-gap, t.$spacing * 8) !default;
 
 /* Component: Site Header */
 $header-height: var(--header-height, t.$spacing * 24) !default;
@@ -15,9 +19,9 @@ $header-height: var(--header-height, t.$spacing * 24) !default;
 $eyebrow-font-size: var(--eyebrow-font-size, map.get(f.$font-sizes, "2xl")) !default;
 $eyebrow-font-weight: var(--eyebrow-font-weight, map.get(f.$font-weights, "semibold")) !default;
 $eyebrow-line-height: var(--eyebrow-line-height, map.get(f.$line-heights, "2xl")) !default;
-$eyebrow-decoration-background-color: var(--eyebrow-decoration-background-color, map.get(c.$gold, "900")) !default;
-$eyebrow-decoration-thickness: var(--eyebrow-decoration-thickness, 2px) !default;
-$eyebrow-decoration-width: var(--eyebrow-decoration-width, t.$spacing * 18) !default;
+$eyebrow-line-background-color: var(--eyebrow-line-background-color, map.get(c.$gold, "900")) !default;
+$eyebrow-line-thickness: var(--eyebrow-line-thickness, 2px) !default;
+$eyebrow-line-width: var(--eyebrow-line-width, t.$spacing * 18) !default;
 
 /* Component: Hero */
 $hero-gap: var(--hero-gap, t.$spacing * 4) !default;
@@ -38,3 +42,13 @@ $icon-height: var(--icon-size, t.$spacing * 6) !default;
 $icon-width: var(--icon-size, t.$spacing * 6) !default;
 
 /* Component: Section Title */
+$section-title-gap: var(--section-title-gap, t.$spacing * 6) !default;
+$seciton-title-triumph-height: var(--section-title-triumph-height, t.$spacing * 12) !default;
+$seciton-title-triumph-width: var(--section-title-triumph-width, t.$spacing * 18) !default;
+
+/* Component: Info */
+$info-padding-block: var(--info-padding-block, t.$spacing * 4) !default;
+$info-detail-padding-left: var(--info-detail-padding-left, t.$spacing * 8) !default;
+$info-detail-margin-bottom: var(--info-detail-margin-bttom, t.$spacing * 12) !default;
+$diamond-size: var(--diamond-size, t.$spacing * 6) !default;
+$diamond-margin-top: var(--diamond-margin-top, 0.5ch) !default;

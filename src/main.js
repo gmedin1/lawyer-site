@@ -1,7 +1,7 @@
 import "./style.scss";
-import cross from "./cross.svg";
-import menu from "./menu.svg";
-import chevron_down from "./chevron-down.svg";
+import cross from "./cross.svg?inline";
+import menu from "./menu.svg?inline";
+import chevron_down from "./chevron-down.svg?inline";
 
 window.addEventListener("DOMContentLoaded", () => {
   const dialog = document.querySelector(".c-dialog-nav");

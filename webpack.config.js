@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const { resourceUsage } = require("process");
 
 module.exports = (_, argv) => {
   const { mode } = argv;
@@ -40,8 +41,27 @@ module.exports = (_, argv) => {
         },
         {
           test: /\.svg$/,
-          type: "asset/source"
-        }
+          oneOf: [
+            {
+              issuer: /\.js$/,
+              resourceQuery: /inline/,
+              type: "asset/source",
+            },
+            {
+              issuer: /\.scss$/,
+              type: "asset/resource",
+              generator: {
+                filename: "images/[name][ext]",
+              },
+            },
+            {
+              type: "asset/resource",
+              generator: {
+                filename: "images/[name][ext]",
+              },
+            },
+          ],
+        },
       ],
     },
     plugins: [
